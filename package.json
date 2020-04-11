@@ -1,0 +1,49 @@
+{
+  "name": "parse-server-firebase",
+  "version": "1.0.0",
+  "description": "Firebase adapters, extensions and utilities for Parse Server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/L3K0V/parse-server-firebase"
+  },
+  "main": "lib/main/index.js",
+  "typings": "lib/main/index.d.ts",
+  "module": "lib/module/index.js",
+  "scripts": {
+    "lint": "yarn eslint . --ext .ts",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.module.json"
+  },
+  "homepage": "https://github.com/L3K0V/parse-server-firebase",
+  "bugs": "https://github.com/L3K0V/parse-server-firebase/issues",
+  "keywords": [
+    "parse",
+    "parse-server",
+    "firebase",
+    "fireabse-auth",
+    "firebase-storage",
+    "google-cloud-storage"
+  ],
+  "author": "Asen Lekov",
+  "license": "MIT",
+  "devDependencies": {
+    "@google-cloud/storage": "^4.7.0",
+    "@types/express": "^4.17.6",
+    "@types/node": "~13.11.1",
+    "@types/parse": "^2.10.18",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "parse": "^2.12.0",
+    "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "firebase-admin": "^8.10.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    "strict": true,
+    "strictNullChecks": false,
+    "rootDir": "src",
+    "outDir": "lib/main",
+    "declaration": true,
+    "importHelpers": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "node_modules",
+    "lib"
+  ]
+}
