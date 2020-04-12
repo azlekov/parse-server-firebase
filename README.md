@@ -1,5 +1,7 @@
 # Parse Server Firebase
 
+![npm](https://img.shields.io/npm/v/parse-server-firebase)
+
 ## Getting started
 
 Install the module by npm
