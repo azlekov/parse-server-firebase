@@ -1,6 +1,6 @@
 # Parse Server Firebase
 
-![npm](https://img.shields.io/npm/v/parse-server-firebase)
+![npm](https://img.shields.io/npm/v/parse-server-firebase) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/parse-server-firebase) ![NPM](https://img.shields.io/npm/l/parse-server-firebase)
 
 ## Getting started
 
