@@ -21,7 +21,7 @@ export default class FirebaseStorageAdapter {
         }, "storage").storage().bucket();
     }
 
-    createFile(filename: string, data: unknown, contentType: string, options: { tags: unknown; metadata: unknown }): Promise<void> {
+    createFile(filename: string, data: Buffer, contentType: string, options: { tags: unknown; metadata: unknown }): Promise<void> {
         const file = this.bucket.file(filename)
 
         const metadata = {}
