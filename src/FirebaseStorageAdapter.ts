@@ -1,18 +1,26 @@
 import * as path from 'path'
 import { Request, Response } from 'express';
 import { Config } from 'parse';
-import { required, optional } from './Config';
+import { required, optional, persists, isImage, generateThumbnails } from './utils';
 import * as admin from 'firebase-admin';
 import { Bucket } from '@google-cloud/storage';
+
+export interface File {
+    filename: string;
+    data: Buffer;
+    contentType: string;
+    options: {
+        tags: unknown;
+        metadata: unknown;
+    };
+}
 
 export default class FirebaseStorageAdapter {
 
     private bucket: Bucket;
     private directAccess: boolean;
-    private cacheControl: string;
 
     constructor() {
-        this.cacheControl = optional('FIREBASE_STORAGE_CACHE_CONTROL', 'public, max-age=3600')
         this.directAccess = optional('FIREBASE_STORAGE_DIRECT_ACCESS', false) as boolean
 
         this.bucket = admin.initializeApp({
@@ -21,28 +29,12 @@ export default class FirebaseStorageAdapter {
         }, "storage").storage().bucket();
     }
 
-    createFile(filename: string, data: Buffer, contentType: string, options: { tags: unknown; metadata: unknown }): Promise<void> {
-        const file = this.bucket.file(filename)
+    async createFile(filename: string, data: Buffer, contentType: string, options: { tags: unknown; metadata: unknown }): Promise<void> {
+        await this.uploadFile(this.bucket, { filename, data, contentType, options })
 
-        const metadata = {}
-        Object.assign(metadata, metadata, options.tags)
-        Object.assign(metadata, options.metadata || {}, {
-            "cacheControl": this.cacheControl,
-            "contentType": contentType || 'application/octet-stream',
-        });
-
-        const uploadStream = file.createWriteStream({
-            public: this.directAccess,
-            metadata,
-        })
-
-        uploadStream.write(data)
-        uploadStream.end()
-
-        return new Promise((resolve, rejects) => {
-            uploadStream.on('finish', resolve)
-            uploadStream.on('error', rejects)
-        })
+        if (persists('FIREBASE_THUMBNAILS_SIZES') && isImage(filename, contentType)) {
+            generateThumbnails(this.bucket, { filename, data, contentType, options })
+        }
     }
 
     async deleteFile(filename: string): Promise<unknown> {
@@ -142,5 +134,29 @@ export default class FirebaseStorageAdapter {
         } catch (e) {
             return require(path.resolve('.', data))
         }
+    }
+
+    private async uploadFile(bucket: Bucket, file: File): Promise<void> {
+
+        const cacheControl = optional('FIREBASE_STORAGE_CACHE_CONTROL', 'public, max-age=3600')
+
+        const metadata = Object.assign({}, file.options.metadata, file.options.tags)
+        Object.assign(metadata, metadata, {
+            "cacheControl": cacheControl,
+            "contentType": file.contentType || 'application/octet-stream',
+        })
+
+        const uploadStream = bucket.file(file.filename).createWriteStream({
+            public: this.directAccess,
+            metadata,
+        })
+
+        uploadStream.write(file.data)
+        uploadStream.end()
+
+        return new Promise((resolve, rejects) => {
+            uploadStream.on('finish', resolve)
+            uploadStream.on('error', rejects)
+        })
     }
 }

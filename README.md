@@ -75,6 +75,37 @@ const parserServer = new ParseServer({
 })
 ```
 
+#### Extensions
+
+**Generate thumbnails**
+
+Ouf of the box you can generate thumbnails for images by specifying `FIREBASE_THUMBNAILS_SIZES` with an array of the desired target sizes. Each image will be generated presering the aspect ratio of the image, ensuring the image covers both provided dimensions by cropping/clipping to fit.
+
+```bash
+$ export FIREBASE_THUMBNAILS_SIZES="64x64,128x128,256x256"
+```
+
+If you want to resize to fit a specific width or height use the following syntax:
+
+```bash
+$ export FIREBASE_THUMBNAILS_SIZES="64x0,128x0,256x256"
+```
+
+The generated file names will have appended `_thumb_{size}` for example:
+
+Original:
+
+```
+a217ca28b0bfac7db4e3f1272ebb8e12_test.jpg
+```
+
+and generated:
+
+```
+a217ca28b0bfac7db4e3f1272ebb8e12_test_thumb_0x512..jpg
+a217ca28b0bfac7db4e3f1272ebb8e12_test_thumb_1280x720..jpg
+```
+
 ### Authenticate
 
 ```bash

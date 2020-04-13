@@ -2,7 +2,7 @@
     "extends": "./tsconfig",
     "compilerOptions": {
         "target": "esnext",
-        "outDir": "build/module",
+        "outDir": "lib/module",
         "module": "esnext"
     },
     "exclude": [

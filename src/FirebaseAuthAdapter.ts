@@ -1,7 +1,6 @@
 import * as path from 'path'
 import * as admin from 'firebase-admin'
-import { required } from './Config'
-
+import { required } from './utils'
 
 export default class FirebaseAuthAdapter {
 

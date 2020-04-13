@@ -18,6 +18,7 @@
   "keywords": [
     "parse",
     "parse-server",
+    "parse-cloud",
     "firebase",
     "fireabse-auth",
     "firebase-storage",
@@ -44,6 +45,7 @@
     "lib"
   ],
   "dependencies": {
-    "firebase-admin": "^8.10.0"
+    "firebase-admin": "^8.10.0",
+    "parse-cloud-image": "^1.0.0"
   }
 }
