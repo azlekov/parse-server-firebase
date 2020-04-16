@@ -8,7 +8,8 @@ export default class FirebaseAuthAdapter {
 
     constructor() {
         this.firebase = admin.initializeApp({
-            credential: admin.credential.cert(this.credentials())
+            credential: admin.credential.cert(this.credentials()),
+            databaseURL: required('FIREBASE_DATABASE_URL')
         }, "auth")
     }
 
