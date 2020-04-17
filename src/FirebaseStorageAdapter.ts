@@ -3,7 +3,6 @@ import { Request, Response } from 'express';
 import { required, optional, persists, isImage, generateThumbnails } from './utils';
 import * as admin from 'firebase-admin';
 import { Bucket } from '@google-cloud/storage';
-import { Config } from 'parse/node';
 
 export interface File {
     filename: string;
@@ -61,11 +60,11 @@ export default class FirebaseStorageAdapter {
         return data[0]
     }
 
-    getFileLocation(config: Config, filename: string): string {
+    getFileLocation(config: any, filename: string): string {
         if (this.directAccess) {
             return `https://storage.cloud.google.com/${this.bucket.name}/${filename}`
         } else {
-            return (config.get('mount') + '/files/' + config.get('applicationId') + '/' + encodeURIComponent(filename));
+            return `${config.mount}/files/${config.applicationId}/${encodeURIComponent(filename)}`
         }
     }
 

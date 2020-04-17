@@ -20,7 +20,7 @@ export default class FirebaseAuthAdapter {
             throw new Parse.Error(Parse.Error.OBJECT_NOT_FOUND, 'Firebase auth not found for this user.')
         }
         catch (error) {
-            throw new Parse.Error(Parse.Error.OBJECT_NOT_FOUND, error)
+            throw new Parse.Error(Parse.Error.OBJECT_NOT_FOUND, 'Firebase auth is invalid for this user.')
         }
     }
 
