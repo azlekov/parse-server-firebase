@@ -1,9 +1,9 @@
 import * as path from 'path'
 import { Request, Response } from 'express';
-import { Config } from 'parse';
 import { required, optional, persists, isImage, generateThumbnails } from './utils';
 import * as admin from 'firebase-admin';
 import { Bucket } from '@google-cloud/storage';
+import { Config } from 'parse/node';
 
 export interface File {
     filename: string;
