@@ -47,6 +47,6 @@
   ],
   "dependencies": {
     "firebase-admin": "^9.4.0",
-    "parse-cloud-image": "^1.0.0"
+    "parse-cloud-image": "^1.0.1"
   }
 }
