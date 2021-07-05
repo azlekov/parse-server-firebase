@@ -28,7 +28,6 @@
   "author": "Asen Lekov",
   "license": "MIT",
   "devDependencies": {
-    "@google-cloud/storage": "^5.8.5",
     "@types/express": "^4.17.12",
     "@types/node": "~16.0.0",
     "@types/parse": "^2.18.6",
