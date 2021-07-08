@@ -79,7 +79,7 @@ const parserServer = new ParseServer({
 
 **Generate thumbnails**
 
-Ouf of the box you can generate thumbnails for images by specifying `FIREBASE_THUMBNAILS_SIZES` with an array of the desired target sizes. Each image will be generated presering the aspect ratio of the image, ensuring the image covers both provided dimensions by cropping/clipping to fit.
+Ouf of the box you can generate thumbnails for images by specifying `FIREBASE_THUMBNAILS_SIZES` with an array of the desired target sizes. Each image will be generated, preserving the aspect ratio of the image and ensuring the image covers both provided dimensions by cropping/clipping to fit.
 
 ```bash
 $ export FIREBASE_THUMBNAILS_SIZES="64x64,128x128,256x256"
@@ -102,8 +102,8 @@ a217ca28b0bfac7db4e3f1272ebb8e12_test.jpg
 and generated:
 
 ```
-a217ca28b0bfac7db4e3f1272ebb8e12_test_thumb_0x512..jpg
-a217ca28b0bfac7db4e3f1272ebb8e12_test_thumb_1280x720..jpg
+a217ca28b0bfac7db4e3f1272ebb8e12_test_thumb_0x512.jpg
+a217ca28b0bfac7db4e3f1272ebb8e12_test_thumb_1280x720.jpg
 ```
 
 ### Authenticate
@@ -125,6 +125,6 @@ curl -X POST \
 
 ## Why so?
 
-Based on previous adapters provided by the parse community this repository provides firebase adapters and extensions rewritten in TypesScript and newer features in JavaScript for Parse Server.
+Based on previous adapters provided by the parse community this repository provides Firebase adapters and extensions rewritten in TypesScript and newer features in JavaScript for Parse Server.
 
-This package solves few issues. When setup firebase admin NodeJS SDK a credentials file is required. The previous adapters requires the credentials file to be specified by path. In some scenarios this is not aplicable because track the credentials file into the version control system is not good. This package will combine and contains everything needed for all of the service integration supported with Parse Server. In addition provided by this package storage adapter adds support for streaming of files.
+This package solves few issues. First, when setup firebase admin NodeJS SDK a credentials file is required. The previous adapters requires the credentials file to be specified by path. In some scenarios this is not aplicable because track the credentials file into the version control system is not good practice. This package will combine and contains everything needed for all of the service integration supported with Parse Server. In addition provided by this package storage adapter adds support for streaming of files.
