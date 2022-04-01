@@ -1,12 +1,12 @@
-import * as path from "path";
-import * as admin from "firebase-admin";
-import { required } from "./utils";
+import { cert, getApp, initializeApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
+import { credentials } from "./utils";
 
 export default class FirebaseAuthAdapter {
   constructor() {
-    admin.initializeApp(
+    initializeApp(
       {
-        credential: admin.credential.cert(this.credentials()),
+        credential: cert(credentials()),
       },
       "auth"
     );
@@ -18,10 +18,9 @@ export default class FirebaseAuthAdapter {
     options: unknown
   ): Promise<void> {
     try {
-      const decodedToken = await admin
-        .app("auth")
-        .auth()
-        .verifyIdToken(authData.access_token);
+      const decodedToken = await getAuth(getApp("auth")).verifyIdToken(
+        authData.access_token
+      );
       if (decodedToken && decodedToken.uid === authData.id) {
         return;
       }
@@ -39,15 +38,5 @@ export default class FirebaseAuthAdapter {
 
   validateAppId(): Promise<void> {
     return Promise.resolve();
-  }
-
-  private credentials(): admin.ServiceAccount {
-    const data = required("FIREBASE_SERVICE_ACCOUNT");
-
-    try {
-      return JSON.parse(data);
-    } catch (e) {
-      return require(path.resolve(".", data));
-    }
   }
 }

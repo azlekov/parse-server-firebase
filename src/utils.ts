@@ -3,6 +3,7 @@ import * as mime from "mime";
 import { Bucket } from "@google-cloud/storage";
 import { File } from "./FirebaseStorageAdapter";
 import { ParseImage } from "parse-cloud-image";
+import { ServiceAccount } from "firebase-admin/app";
 
 const optional = <T extends string | number | boolean | null | undefined>(
   name: string,
@@ -40,8 +41,9 @@ const generateThumbnail = async (
   });
 
   const pipeline = new ParseImage(image.filename, image.data, contentType);
-  const width = parseInt(size.split("x")[0]);
-  const height = parseInt(size.split("x")[1]);
+  const sizes = size.split("x");
+  const width = sizes.length > 0 ? parseInt(sizes[0]) : 0;
+  const height = sizes.length > 1 ? parseInt(sizes[1]) : 0;
 
   const sharp = await pipeline.process((sharp) =>
     sharp.resize(
@@ -67,4 +69,21 @@ const generateThumbnails = async (
   }
 };
 
-export { optional, required, persists, isImage, generateThumbnails };
+const credentials = (): ServiceAccount => {
+  const data = required("FIREBASE_SERVICE_ACCOUNT");
+
+  try {
+    return JSON.parse(data);
+  } catch (e) {
+    return require(path.resolve(".", data));
+  }
+};
+
+export {
+  optional,
+  required,
+  persists,
+  isImage,
+  generateThumbnails,
+  credentials,
+};

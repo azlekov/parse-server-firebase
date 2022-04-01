@@ -88,7 +88,7 @@ $ export FIREBASE_THUMBNAILS_SIZES="64x64,128x128,256x256"
 If you want to resize to fit a specific width or height use the following syntax:
 
 ```bash
-$ export FIREBASE_THUMBNAILS_SIZES="64x0,128x0,256x256"
+$ export FIREBASE_THUMBNAILS_SIZES="64,128x0,256x256"
 ```
 
 The generated file names will have appended `_thumb_{size}` for example:

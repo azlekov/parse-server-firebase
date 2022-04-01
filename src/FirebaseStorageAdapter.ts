@@ -6,9 +6,11 @@ import {
   persists,
   isImage,
   generateThumbnails,
+  credentials,
 } from "./utils";
-import * as admin from "firebase-admin";
 import { Bucket } from "@google-cloud/storage";
+import { cert, initializeApp } from "firebase-admin/app";
+import { getStorage } from "firebase-admin/storage";
 
 export interface File {
   filename: string;
@@ -30,16 +32,15 @@ export default class FirebaseStorageAdapter {
       false
     ) as boolean;
 
-    this.bucket = admin
-      .initializeApp(
+    this.bucket = getStorage(
+      initializeApp(
         {
-          credential: admin.credential.cert(this.credentials()),
+          credential: cert(credentials()),
           storageBucket: required("FIREBASE_STORAGE_BUCKET"),
         },
         "storage"
       )
-      .storage()
-      .bucket();
+    ).bucket();
   }
 
   async createFile(
@@ -166,16 +167,6 @@ export default class FirebaseStorageAdapter {
       );
     }
     return null;
-  }
-
-  private credentials(): admin.ServiceAccount {
-    const data = required("FIREBASE_SERVICE_ACCOUNT");
-
-    try {
-      return JSON.parse(data);
-    } catch (e) {
-      return require(path.resolve(".", data));
-    }
   }
 
   private async uploadFile(bucket: Bucket, file: File): Promise<void> {
