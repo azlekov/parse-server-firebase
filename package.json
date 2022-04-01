@@ -32,8 +32,8 @@
     "@types/mime": "^2.0.3",
     "@types/node": "~16.11.26",
     "@types/parse": "^2.18.13",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
     "eslint": "^8.12.0",
     "express": "^4.17.3",
     "np": "7.6.1",
@@ -49,6 +49,6 @@
   "dependencies": {
     "firebase-admin": "^9.12.0",
     "mime": "^3.0.0",
-    "parse-cloud-image": "^1.0.2"
+    "parse-cloud-image": "^1.0.3"
   }
 }
