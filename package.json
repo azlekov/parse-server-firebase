@@ -50,5 +50,8 @@
     "firebase-admin": "^10.0.2",
     "mime": "^3.0.0",
     "parse-cloud-image": "^1.0.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
