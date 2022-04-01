@@ -1,7 +1,4 @@
 import FirebaseAuthAdapter from "./FirebaseAuthAdapter";
-import FirebaseStorageAdapter from './FirebaseStorageAdapter';
+import FirebaseStorageAdapter from "./FirebaseStorageAdapter";
 
-export {
-    FirebaseAuthAdapter,
-    FirebaseStorageAdapter
-}
+export { FirebaseAuthAdapter, FirebaseStorageAdapter };
