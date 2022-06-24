@@ -47,7 +47,7 @@
     "lib"
   ],
   "dependencies": {
-    "firebase-admin": "^10.0.2",
+    "firebase-admin": "^11.0.0",
     "mime": "^3.0.0",
     "parse-cloud-image": "^1.0.3"
   },

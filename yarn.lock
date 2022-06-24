@@ -53,6 +53,13 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fastify/busboy@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-1.1.0.tgz#4472f856e2bb5a9ee34ad64b93891b73b73537ca"
+  integrity sha512-Fv854f94v0CzIDllbY3i/0NJPNBRNLDawf3BTYVGCe9VrIIs3Wi7AFx24F9NzCxdf0wyx/x0Q9kEVnvDOPnlxA==
+  dependencies:
+    text-decoding "^1.0.0"
+
 "@firebase/app-types@0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.7.0.tgz#c9e16d1b8bed1a991840b8d2a725fb58d0b5899f"
@@ -63,33 +70,33 @@
   resolved "https://registry.yarnpkg.com/@firebase/auth-interop-types/-/auth-interop-types-0.1.6.tgz#5ce13fc1c527ad36f1bb1322c4492680a6cf4964"
   integrity sha512-etIi92fW3CctsmR9e3sYM3Uqnoq861M0Id9mdOPF6PWIg38BXL5k4upCNBggGUpLIS0H1grMOvy/wn1xymwe2g==
 
-"@firebase/component@0.5.13":
-  version "0.5.13"
-  resolved "https://registry.yarnpkg.com/@firebase/component/-/component-0.5.13.tgz#65a382e83bddd109380c9aa1f280791b1b4567c4"
-  integrity sha512-hxhJtpD8Ppf/VU2Rlos6KFCEV77TGIGD5bJlkPK1+B/WUe0mC6dTjW7KhZtXTc+qRBp9nFHWcsIORnT8liHP9w==
+"@firebase/component@0.5.16":
+  version "0.5.16"
+  resolved "https://registry.yarnpkg.com/@firebase/component/-/component-0.5.16.tgz#e4fdc79b87fcb8a054dce5b78e1acae4ceb0c13f"
+  integrity sha512-/pkl77mN9PT7dTSzNu1CrvIvd+z1CdePnEl+VITaeSBs9Ko7ZVvSIlzQLbSwqksXX3bAHpxej0Mg6mVKQiRVSw==
   dependencies:
-    "@firebase/util" "1.5.2"
+    "@firebase/util" "1.6.2"
     tslib "^2.1.0"
 
-"@firebase/database-compat@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@firebase/database-compat/-/database-compat-0.1.8.tgz#ab627f2bdbe94367f515d5bded880c86886bbd28"
-  integrity sha512-dhXr5CSieBuKNdU96HgeewMQCT9EgOIkfF1GNy+iRrdl7BWLxmlKuvLfK319rmIytSs/vnCzcD9uqyxTeU/A3A==
+"@firebase/database-compat@^0.2.0":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@firebase/database-compat/-/database-compat-0.2.2.tgz#77a57d75d31c5b227151e49cab0c3fd7b98bab04"
+  integrity sha512-3wLHJ54WHMhrveCywCMbkspshFezN07PLOIsmqELM1+pmrg3bwMj9u/o3Equ0DwmESMnchp5sMxgzdBUOextJg==
   dependencies:
-    "@firebase/component" "0.5.13"
-    "@firebase/database" "0.12.8"
-    "@firebase/database-types" "0.9.7"
-    "@firebase/logger" "0.3.2"
-    "@firebase/util" "1.5.2"
+    "@firebase/component" "0.5.16"
+    "@firebase/database" "0.13.2"
+    "@firebase/database-types" "0.9.10"
+    "@firebase/logger" "0.3.3"
+    "@firebase/util" "1.6.2"
     tslib "^2.1.0"
 
-"@firebase/database-types@0.9.7":
-  version "0.9.7"
-  resolved "https://registry.yarnpkg.com/@firebase/database-types/-/database-types-0.9.7.tgz#c5ee0ea9bb2703a13c1c47fe880fc577d5ce7f33"
-  integrity sha512-EFhgL89Fz6DY3kkB8TzdHvdu8XaqqvzcF2DLVOXEnQ3Ms7L755p5EO42LfxXoJqb9jKFvgLpFmKicyJG25WFWw==
+"@firebase/database-types@0.9.10":
+  version "0.9.10"
+  resolved "https://registry.yarnpkg.com/@firebase/database-types/-/database-types-0.9.10.tgz#5505978ee39e3fd45ecf492a986236ead874b999"
+  integrity sha512-2ji6nXRRsY+7hgU6zRhUtK0RmSjVWM71taI7Flgaw+BnopCo/lDF5HSwxp8z7LtiHlvQqeRA3Ozqx5VhlAbiKg==
   dependencies:
     "@firebase/app-types" "0.7.0"
-    "@firebase/util" "1.5.2"
+    "@firebase/util" "1.6.2"
 
 "@firebase/database-types@^0.9.7":
   version "0.9.8"
@@ -99,29 +106,22 @@
     "@firebase/app-types" "0.7.0"
     "@firebase/util" "1.6.0"
 
-"@firebase/database@0.12.8":
-  version "0.12.8"
-  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.12.8.tgz#11a1b6752ba0614892af15c71958e00ce16f5824"
-  integrity sha512-JBQVfFLzfhxlQbl4OU6ov9fdsddkytBQdtSSR49cz48homj38ccltAhK6seum+BI7f28cV2LFHF9672lcN+qxA==
+"@firebase/database@0.13.2":
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.13.2.tgz#c0843f673e3fce25eca894bc7621c97a26b5a08d"
+  integrity sha512-wKkBD4rq6PPv9gl1hNJNpl0R0bwJmXCJfDuvotjXmTcU7kV0AIaJ45GVhULkbSCApAAFC6QUJ91oasDUO1ZVxw==
   dependencies:
     "@firebase/auth-interop-types" "0.1.6"
-    "@firebase/component" "0.5.13"
-    "@firebase/logger" "0.3.2"
-    "@firebase/util" "1.5.2"
+    "@firebase/component" "0.5.16"
+    "@firebase/logger" "0.3.3"
+    "@firebase/util" "1.6.2"
     faye-websocket "0.11.4"
     tslib "^2.1.0"
 
-"@firebase/logger@0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@firebase/logger/-/logger-0.3.2.tgz#5046ffa8295c577846d54b6ca95645a03809800e"
-  integrity sha512-lzLrcJp9QBWpo40OcOM9B8QEtBw2Fk1zOZQdvv+rWS6gKmhQBCEMc4SMABQfWdjsylBcDfniD1Q+fUX1dcBTXA==
-  dependencies:
-    tslib "^2.1.0"
-
-"@firebase/util@1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-1.5.2.tgz#bdd2bc11c956a8a6a0fa25fbd752a13e033558bc"
-  integrity sha512-YvBH2UxFcdWG2HdFnhxZptPl2eVFlpOyTH66iDo13JPEYraWzWToZ5AMTtkyRHVmu7sssUpQlU9igy1KET7TOw==
+"@firebase/logger@0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@firebase/logger/-/logger-0.3.3.tgz#0f724b1e0b166d17ac285aac5c8ec14d136beed4"
+  integrity sha512-POTJl07jOKTOevLXrTvJD/VZ0M6PnJXflbAh5J9VGkmtXPXNG6MdZ9fmRgqYhXKTaDId6AQenQ262uwgpdtO0Q==
   dependencies:
     tslib "^2.1.0"
 
@@ -132,10 +132,17 @@
   dependencies:
     tslib "^2.1.0"
 
-"@google-cloud/firestore@^4.15.1":
-  version "4.15.1"
-  resolved "https://registry.yarnpkg.com/@google-cloud/firestore/-/firestore-4.15.1.tgz#ed764fc76823ce120e68fe8c27ef1edd0650cd93"
-  integrity sha512-2PWsCkEF1W02QbghSeRsNdYKN1qavrHBP3m72gPDMHQSYrGULOaTi7fSJquQmAtc4iPVB2/x6h80rdLHTATQtA==
+"@firebase/util@1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-1.6.2.tgz#540e3010fd3f8fad4f472e00b4ad7b7c844e0499"
+  integrity sha512-VYDqEf/+mS7n0nPj6qJDJYFtKIEfOaTtQeNDsd3x+xp8HWvrbygWOexzeGicLP1dvEzrKr3eQGcJmmmYN3TIsA==
+  dependencies:
+    tslib "^2.1.0"
+
+"@google-cloud/firestore@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@google-cloud/firestore/-/firestore-5.0.2.tgz#36923fde45987f928a220d347f341c5602f9e340"
+  integrity sha512-xlGcNYaW0nvUMzNn2+pLfbEBVt6oysVqtM89faMgZWkWfEtvIQGS0h5PRdLlcqufNzRCX3yIGv29Pb+03ys+VA==
   dependencies:
     fast-deep-equal "^3.1.1"
     functional-red-black-tree "^1.0.1"
@@ -150,44 +157,41 @@
     arrify "^2.0.0"
     extend "^3.0.2"
 
-"@google-cloud/projectify@^2.0.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@google-cloud/projectify/-/projectify-2.1.1.tgz#ae6af4fee02d78d044ae434699a630f8df0084ef"
-  integrity sha512-+rssMZHnlh0twl122gXY4/aCrk0G1acBqkHFfYddtsqpYXGxA29nj9V5V9SfC+GyOG00l650f6lG9KL+EpFEWQ==
+"@google-cloud/projectify@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/projectify/-/projectify-3.0.0.tgz#302b25f55f674854dce65c2532d98919b118a408"
+  integrity sha512-HRkZsNmjScY6Li8/kb70wjGlDDyLkVk3KvoEo9uIoxSjYLJasGiCch9+PqRVDOCGUFvEIqyogl+BeqILL4OJHA==
 
-"@google-cloud/promisify@^2.0.0":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-2.0.4.tgz#9d8705ecb2baa41b6b2673f3a8e9b7b7e1abc52a"
-  integrity sha512-j8yRSSqswWi1QqUGKVEKOG03Q7qOoZP6/h2zN2YO+F5h2+DHU0bSrHCK9Y7lo2DI9fBd8qGAw795sf+3Jva4yA==
+"@google-cloud/promisify@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-3.0.0.tgz#5cd6941fc30c4acac18051706aa5af96069bd3e3"
+  integrity sha512-91ArYvRgXWb73YvEOBMmOcJc0bDRs5yiVHnqkwoG0f3nm7nZuipllz6e7BvFESBvjkDTBC0zMD8QxedUwNLc1A==
 
-"@google-cloud/storage@^5.18.3":
-  version "5.20.5"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-5.20.5.tgz#1de71fc88d37934a886bc815722c134b162d335d"
-  integrity sha512-lOs/dCyveVF8TkVFnFSF7IGd0CJrTm91qiK6JLu+Z8qiT+7Ag0RyVhxZIWkhiACqwABo7kSHDm8FdH8p2wxSSw==
+"@google-cloud/storage@^6.1.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-6.2.0.tgz#811ee37b75dd87f249f570309605d4c171c718cf"
+  integrity sha512-evOiaIXj4Hjyksa0m67bf3PfCC7VEbVXeJ3EhOCpWZc8biZiLHWJqhfkeW1H6ZIbKn2bBA0JrIZRJc/u8YrF9w==
   dependencies:
     "@google-cloud/paginator" "^3.0.7"
-    "@google-cloud/projectify" "^2.0.0"
-    "@google-cloud/promisify" "^2.0.0"
+    "@google-cloud/projectify" "^3.0.0"
+    "@google-cloud/promisify" "^3.0.0"
     abort-controller "^3.0.0"
     arrify "^2.0.0"
     async-retry "^1.3.3"
     compressible "^2.0.12"
-    configstore "^5.0.0"
     duplexify "^4.0.0"
     ent "^2.2.0"
     extend "^3.0.2"
-    gaxios "^4.0.0"
-    google-auth-library "^7.14.1"
-    hash-stream-validation "^0.2.2"
+    gaxios "^5.0.0"
+    google-auth-library "^8.0.1"
     mime "^3.0.0"
     mime-types "^2.0.8"
     p-limit "^3.0.1"
     pumpify "^2.0.0"
-    retry-request "^4.2.2"
+    retry-request "^5.0.0"
     stream-events "^1.0.4"
-    teeny-request "^7.1.3"
+    teeny-request "^8.0.0"
     uuid "^8.0.0"
-    xdg-basedir "^4.0.0"
 
 "@grpc/grpc-js@~1.6.0":
   version "1.6.7"
@@ -1049,7 +1053,7 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-configstore@^5.0.0, configstore@^5.0.1:
+configstore@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/configstore/-/configstore-5.0.1.tgz#d365021b5df4b98cdd187d6a3b0e3f6a7cc5ed96"
   integrity sha512-aMKprgk5YhBNyH25hj8wGt2+D52Sw1DRRIzqBwLp2Ya9mFmY8KPvvtvmna8SxVR9JMZ4kzMD68N22vlaRpkeFA==
@@ -1234,13 +1238,6 @@ detect-libc@^2.0.0, detect-libc@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.1.tgz#e1897aa88fa6ad197862937fbc0441ef352ee0cd"
   integrity sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==
-
-dicer@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/dicer/-/dicer-0.3.1.tgz#abf28921e3475bc5e801e74e0159fd94f927ba97"
-  integrity sha512-ObioMtXnmjYs3aRtpIJt9rgQSPCIhKVkFPip+E9GUDyWl8N435znUxK/JfNwGZJ2wnn5JKQ7Ly3vOK5Q5dylGA==
-  dependencies:
-    streamsearch "^1.1.0"
 
 dir-glob@^3.0.1:
   version "3.0.1"
@@ -1680,22 +1677,22 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase-admin@^10.0.2:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-10.2.0.tgz#e5a97d35819b5872e3e29384b48f67dab59ede04"
-  integrity sha512-6ehn5J9UEFgi4+naqYvozmGpnZae3cJLdwSkSsDc8/Y0eTBjVMFdf9N2ft7N81UNHA0N5DknOyXhlsdAdyBLCA==
+firebase-admin@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-11.0.0.tgz#b10355cd9b142cf305fcb7842b51f918d3745a11"
+  integrity sha512-x56u+Q1P8QDvQKaYRe29ZUM/3f829cP8tsKCDXOhaIX/GbGfgcdjRhPmCafzlwgCWP5wW9NkOgIhnrw94zucvw==
   dependencies:
-    "@firebase/database-compat" "^0.1.8"
+    "@fastify/busboy" "^1.1.0"
+    "@firebase/database-compat" "^0.2.0"
     "@firebase/database-types" "^0.9.7"
     "@types/node" ">=12.12.47"
-    dicer "^0.3.0"
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.2"
     node-forge "^1.3.1"
     uuid "^8.3.2"
   optionalDependencies:
-    "@google-cloud/firestore" "^4.15.1"
-    "@google-cloud/storage" "^5.18.3"
+    "@google-cloud/firestore" "^5.0.2"
+    "@google-cloud/storage" "^6.1.0"
 
 flat-cache@^3.0.4:
   version "3.0.4"
@@ -1765,12 +1762,31 @@ gaxios@^4.0.0:
     is-stream "^2.0.0"
     node-fetch "^2.6.7"
 
+gaxios@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/gaxios/-/gaxios-5.0.0.tgz#df11e5d0a45831dd39eb5fbbba0d6a6b09815e70"
+  integrity sha512-VD/yc5ln6XU8Ch1hyYY6kRMBE0Yc2np3fPyeJeYHhrPs1i8rgnsApPMWyrugkl7LLoSqpOJVBWlQIa87OAvt8Q==
+  dependencies:
+    abort-controller "^3.0.0"
+    extend "^3.0.2"
+    https-proxy-agent "^5.0.0"
+    is-stream "^2.0.0"
+    node-fetch "^2.6.7"
+
 gcp-metadata@^4.2.0:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/gcp-metadata/-/gcp-metadata-4.3.1.tgz#fb205fe6a90fef2fd9c85e6ba06e5559ee1eefa9"
   integrity sha512-x850LS5N7V1F3UcV7PoupzGsyD6iVwTVvsh3tbXfkctZnBnjW5yu5z1/3k3SehF7TyoTIe78rJs02GMMy+LF+A==
   dependencies:
     gaxios "^4.0.0"
+    json-bigint "^1.0.0"
+
+gcp-metadata@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/gcp-metadata/-/gcp-metadata-5.0.0.tgz#a00f999f60a4461401e7c515f8a3267cfb401ee7"
+  integrity sha512-gfwuX3yA3nNsHSWUL4KG90UulNiq922Ukj3wLTrcnX33BB7PwB1o0ubR8KVvXu9nJH+P5w1j2SQSNNqto+H0DA==
+  dependencies:
+    gaxios "^5.0.0"
     json-bigint "^1.0.0"
 
 get-caller-file@^2.0.5:
@@ -1887,7 +1903,7 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
-google-auth-library@^7.14.0, google-auth-library@^7.14.1:
+google-auth-library@^7.14.0:
   version "7.14.1"
   resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-7.14.1.tgz#e3483034162f24cc71b95c8a55a210008826213c"
   integrity sha512-5Rk7iLNDFhFeBYc3s8l1CqzbEBcdhwR193RlD4vSNFajIcINKI8W8P0JLmBpwymHqqWbX34pJDQu39cSy/6RsA==
@@ -1899,6 +1915,21 @@ google-auth-library@^7.14.0, google-auth-library@^7.14.1:
     gaxios "^4.0.0"
     gcp-metadata "^4.2.0"
     gtoken "^5.0.4"
+    jws "^4.0.0"
+    lru-cache "^6.0.0"
+
+google-auth-library@^8.0.1:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-8.0.3.tgz#1e780430632d03df36dc22a3f5c89dbc251f2105"
+  integrity sha512-1eC6yaCrPfkv3bwtb3e0AOct7E7xR/uikDyXNo/j8Wd6a1ldRgAey5FmaDGNJnHNDPLtDiENQLYsA69eXOF5sA==
+  dependencies:
+    arrify "^2.0.0"
+    base64-js "^1.3.0"
+    ecdsa-sig-formatter "^1.0.11"
+    fast-text-encoding "^1.0.0"
+    gaxios "^5.0.0"
+    gcp-metadata "^5.0.0"
+    gtoken "^6.0.0"
     jws "^4.0.0"
     lru-cache "^6.0.0"
 
@@ -1925,6 +1956,13 @@ google-p12-pem@^3.1.3:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/google-p12-pem/-/google-p12-pem-3.1.4.tgz#123f7b40da204de4ed1fbf2fd5be12c047fc8b3b"
   integrity sha512-HHuHmkLgwjdmVRngf5+gSmpkyaRI6QmOg77J8tkNBHhNEI62sGHyw4/+UkgyZEI7h84NbWprXDJ+sa3xOYFvTg==
+  dependencies:
+    node-forge "^1.3.1"
+
+google-p12-pem@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/google-p12-pem/-/google-p12-pem-4.0.0.tgz#f46581add1dc6ea0b96160cda6ce37ee35ab8ca3"
+  integrity sha512-lRTMn5ElBdDixv4a86bixejPSRk1boRtUowNepeKEVvYiFlkLuAJUVpEz6PfObDHYEKnZWq/9a2zC98xu62A9w==
   dependencies:
     node-forge "^1.3.1"
 
@@ -1985,6 +2023,15 @@ gtoken@^5.0.4:
     google-p12-pem "^3.1.3"
     jws "^4.0.0"
 
+gtoken@^6.0.0:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/gtoken/-/gtoken-6.0.1.tgz#1276371d51e93c4eface76e3f30f9e8f1cad3f1a"
+  integrity sha512-J0vebk6u6i4rLTM0lQq25SdusCLMvujYNZeAouyPvSbGlcjw7P8L3W9INIFnlXUx+AUD7TDoM1mgdhzH+XX7DQ==
+  dependencies:
+    gaxios "^4.0.0"
+    google-p12-pem "^4.0.0"
+    jws "^4.0.0"
+
 hard-rejection@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/hard-rejection/-/hard-rejection-2.1.0.tgz#1c6eda5c1685c63942766d79bb40ae773cecd883"
@@ -2028,11 +2075,6 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
-
-hash-stream-validation@^0.2.2:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/hash-stream-validation/-/hash-stream-validation-0.2.4.tgz#ee68b41bf822f7f44db1142ec28ba9ee7ccb7512"
-  integrity sha512-Gjzu0Xn7IagXVkSu9cSFuK1fqzwtLwFhNhVL8IFJijRNMgUttFbBSIAzKuSIrsFMO1+g1RlsoN49zPIbwPDMGQ==
 
 hosted-git-info@^2.1.4:
   version "2.8.9"
@@ -3702,10 +3744,18 @@ restore-cursor@^3.1.0:
     onetime "^5.1.0"
     signal-exit "^3.0.2"
 
-retry-request@^4.0.0, retry-request@^4.2.2:
+retry-request@^4.0.0:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/retry-request/-/retry-request-4.2.2.tgz#b7d82210b6d2651ed249ba3497f07ea602f1a903"
   integrity sha512-xA93uxUD/rogV7BV59agW/JHPGXeREMWiZc9jhcwY4YdZ7QOtC7qbomYg0n4wyk2lJhggjvKvhNX8wln/Aldhg==
+  dependencies:
+    debug "^4.1.1"
+    extend "^3.0.2"
+
+retry-request@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/retry-request/-/retry-request-5.0.1.tgz#c6be2a4a36f1554ba3251fa8fd945af26ee0e9ec"
+  integrity sha512-lxFKrlBt0OZzCWh/V0uPEN0vlr3OhdeXnpeY5OES+ckslm791Cb1D5P7lJUSnY7J5hiCjcyaUGmzCnIGDCUBig==
   dependencies:
     debug "^4.1.1"
     extend "^3.0.2"
@@ -3960,11 +4010,6 @@ stream-shift@^1.0.0:
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
 
-streamsearch@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
-  integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
-
 string-width@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -4136,10 +4181,10 @@ tar-stream@^2.1.4:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-teeny-request@^7.1.3:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/teeny-request/-/teeny-request-7.2.0.tgz#41347ece068f08d741e7b86df38a4498208b2633"
-  integrity sha512-SyY0pek1zWsi0LRVAALem+avzMLc33MKW/JLLakdP4s9+D7+jHcy5x6P+h94g2QNZsAqQNfX5lsbd3WSeJXrrw==
+teeny-request@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/teeny-request/-/teeny-request-8.0.0.tgz#9614410ba70114fd28ba7bf5077dce3e2f02adf7"
+  integrity sha512-6KEYxXI4lQPSDkXzXpPmJPNmo7oqduFFbhOEHf8sfsLbXyCsb+umUjBtMGAKhaSToD8JNCtQutTRefu29K64JA==
   dependencies:
     http-proxy-agent "^5.0.0"
     https-proxy-agent "^5.0.0"
@@ -4154,6 +4199,11 @@ terminal-link@^2.1.1:
   dependencies:
     ansi-escapes "^4.2.1"
     supports-hyperlinks "^2.0.0"
+
+text-decoding@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/text-decoding/-/text-decoding-1.0.0.tgz#38a5692d23b5c2b12942d6e245599cb58b1bc52f"
+  integrity sha512-/0TJD42KDnVwKmDK6jj3xP7E2MG7SHAOG4tyTgyUCRPdHwvkquYNLEQltmdMa3owq3TkddCVcTsoctJI8VQNKA==
 
 text-table@^0.2.0:
   version "0.2.0"
