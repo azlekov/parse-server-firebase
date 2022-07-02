@@ -31,10 +31,10 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.17.9":
-  version "7.17.9"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
-  integrity sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==
+"@babel/runtime@7.18.0":
+  version "7.18.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.0.tgz#6d77142a19cb6088f0af662af1ada37a604d34ae"
+  integrity sha512-YMQvx/6nKEaucl0MY56mwIG483xk8SDNdlUwb2Ts6FUpr7fm85DxEmsY18LXBNhcTz6tO6JwZV8w1W06v8UKeg==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -3393,17 +3393,17 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-parse@3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/parse/-/parse-3.4.2.tgz#17e417b41f4c785b347fd8734e7b7d75c226d5a7"
-  integrity sha512-Ruehcp/S7eB3A0lDG5eAPvZHa5pABCbUR+lMJL2gUNKJLZNcD9/s3RL255PwI5jTqa+TCJ7MdPqobUplouN1pQ==
+parse@3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/parse/-/parse-3.4.3.tgz#7196bfe98ed59111259c9d1e0135c7127f77ea0e"
+  integrity sha512-ZfpWQIaa+tui6Ra77jGmWeMOIeqKKAS60c1wRCQeeTOlZ7lOSeWZhoAsjkK3g9njnVXj6GL6Mgv9hl6GkCNR9A==
   dependencies:
-    "@babel/runtime" "7.17.9"
+    "@babel/runtime" "7.18.0"
     "@babel/runtime-corejs3" "7.17.8"
     idb-keyval "6.0.3"
     react-native-crypto-js "1.0.0"
     uuid "3.4.0"
-    ws "7.5.1"
+    ws "8.6.0"
     xmlhttprequest "1.8.0"
   optionalDependencies:
     crypto-js "4.1.1"
@@ -4521,10 +4521,10 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@7.5.1:
-  version "7.5.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.1.tgz#44fc000d87edb1d9c53e51fbc69a0ac1f6871d66"
-  integrity sha512-2c6faOUH/nhoQN6abwMloF7Iyl0ZS2E9HGtsiLrWn0zOOMWlhtDmdf/uihDt6jnuCxgtwGBNy6Onsoy2s2O2Ow==
+ws@8.6.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.6.0.tgz#e5e9f1d9e7ff88083d0c0dd8281ea662a42c9c23"
+  integrity sha512-AzmM3aH3gk0aX7/rZLYvjdvZooofDu3fFOzGqcSnQ1tOcTWwhM/o+q++E8mAyVVIyUdajrkzWUGftaVSDLn1bw==
 
 xdg-basedir@^4.0.0:
   version "4.0.0"
